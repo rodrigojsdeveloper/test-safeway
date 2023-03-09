@@ -22,11 +22,7 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 1300px) {
-    width: 100%;
-    min-width: unset;
-    max-width: 365px;
-
+  @media (max-width: 1440px) {
     margin: 0 auto;
     padding-top: 20px;
   }
