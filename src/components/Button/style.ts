@@ -73,7 +73,7 @@ const Container = styled.button<IButtonStyled>`
           max-width: 350px;
           height: 40px;
 
-          margin: 20px auto 0 auto;
+          margin: 0 auto;
         `;
 
       default:

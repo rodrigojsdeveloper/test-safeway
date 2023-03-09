@@ -19,16 +19,34 @@ const ModalCheckoutCart = ({
         ))}
       </menu>
 
-      <Button
-        color="blue"
-        size="large"
-        onClick={() => {
-          clearAllProducts();
-          setOpenModal(false);
-        }}
-      >
-        Comprar
-      </Button>
+      <div>
+        <div>
+          <p>Total</p>
+
+          <span>
+            R${" "}
+            {cartProducts
+              .reduce(
+                (valorAnterior, valorAtual) =>
+                  valorAnterior + Number(valorAtual.preco * valorAtual.count),
+                0
+              )
+              .toFixed(2)
+              .replace(".", ",")}
+          </span>
+        </div>
+
+        <Button
+          color="blue"
+          size="large"
+          onClick={() => {
+            clearAllProducts();
+            setOpenModal(false);
+          }}
+        >
+          Comprar
+        </Button>
+      </div>
     </Container>
   );
 };
