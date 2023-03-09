@@ -1,7 +1,7 @@
 import { CartWithProducts } from "../CartWithProducts";
 import { CartEmpty } from "../CartEmpty";
-import { Container } from "./style";
 import { ICart } from "../../interfaces";
+import { Container } from "./style";
 
 const Cart = ({
   cartProducts,
