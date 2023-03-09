@@ -1,6 +1,6 @@
 &#xa0;
 
-<h1 align="center">Teste SafeWay</h1>
+<h1 align="center">Teste Frontend React Developer</h1>
 
 <p align="center">
  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Rodrigodeveloperjr/teste-front-end-jr?color=56BEB8&logo=typescript">
@@ -30,6 +30,7 @@ Seguintes ferramentas foram usadas neste projeto:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled-components](https://styled-components.com/)
 - [Axios](https://axios-http.com/docs/intro/)
+- [JSON Server](https://github.com/typicode/json-server/)
 
 ## :checkered_flag: Iniciando o Projeto
 
@@ -40,7 +41,10 @@ $ git clone https://github.com/Rodrigodeveloperjr/test-safeway.git
 # Instalar dependências
 $ yarn
 
-# Execute o projeto
+# Execute a fake api com JSON Server
+json-server --watch dbTeste.json
+
+# Abra outro terminal e execute o projeto
 $ yarn dev
 
 # O servidor inicializará no <http://localhost:5173>
