@@ -59,17 +59,17 @@
     {
       "id": 8,
       "nome": "Coca cola 600ml",
-      "descricao": "",
+      "descricao": "Coca cola 600ml",
       "preco": 7.5,
       "foto": "https://www.clubeextra.com.br/img/uploads/1/18/12034018.jpg",
       "categoria_id": 3
     },
     {
       "id": 9,
-      "nome": "Chocolate Milka Oreo",
-      "descricao": "Chocolate recheado com creme de Oreo",
+      "nome": "Chocolate Garoto",
+      "descricao": "Chocolate Garoto",
       "preco": 12,
-      "foto": "https://m.media-amazon.com/images/I/61APYfE+uZL._AC_SL1200_.jpg",
+      "foto": "https://e7.pngegg.com/pngimages/209/488/png-clipart-chocolate-bar-white-chocolate-milk-garoto-chocolate-meio-amargo-milk-food-supermarket-thumbnail.png",
       "categoria_id": 3
     }
   ],

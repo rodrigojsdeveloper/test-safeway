@@ -1,11 +1,7 @@
+import { IProductProps } from "../../interfaces";
 import { Container } from "./style";
 
-interface IProductComponent {
-  product: any;
-  handleAddToCart: (product: any) => void;
-}
-
-const Product = ({ product, handleAddToCart }: IProductComponent) => {
+const Product = ({ product, handleListCartProducts }: IProductProps) => {
   return (
     <Container>
       <figure>
@@ -19,7 +15,7 @@ const Product = ({ product, handleAddToCart }: IProductComponent) => {
 
         <span>R$ {product.preco.toFixed(2).replace(".", ",")}</span>
 
-        <button onClick={() => handleAddToCart(product)}>Comprar</button>
+        <button onClick={() => handleListCartProducts(product)}>Comprar</button>
       </div>
     </Container>
   );

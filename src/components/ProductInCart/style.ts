@@ -4,21 +4,21 @@ const Container = styled.div`
   width: 100%;
   height: 80px;
 
+  margin: 20px 0;
+
   display: flex;
   flex-direction: row;
-
-  margin: 20px 0;
 
   & > figure {
     width: 80px;
     height: 80px;
 
+    border-radius: 5px;
+    background-color: var(--grey-20);
+
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    border-radius: 5px;
-    background-color: var(--grey-20);
   }
 
   & > div {
@@ -32,7 +32,7 @@ const Container = styled.div`
 
     padding-left: 10px;
 
-    & > div {
+    & > div:nth-child(1) {
       display: flex;
       flex-direction: column;
 
@@ -65,17 +65,60 @@ const Container = styled.div`
       }
     }
 
-    & > p {
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 15px;
+    & > div:nth-child(2) {
+      height: 45px;
 
-      cursor: pointer;
-      color: var(--grey-10);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
-      &:hover {
-        color: var(--grey-50);
-        text-decoration: underline;
+      & > p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+
+        cursor: pointer;
+        color: var(--grey-10);
+
+        &:hover {
+          color: var(--grey-50);
+          text-decoration: underline;
+        }
+      }
+
+      & > div {
+        button,
+        span {
+          color: var(--grey-50);
+        }
+
+        & > button {
+          border: 1px solid var(--grey-20);
+          padding: 0 4px;
+          background: transparent;
+
+          width: 20px;
+          height: 20px;
+        }
+
+        & > button:hover {
+          transition: background 300ms ease 0s;
+          background: var(--grey-20);
+        }
+
+        & > span {
+          width: 20px;
+          height: 20px;
+
+          padding: 0px 12px 2px 12px;
+
+          font-size: 14px;
+          font-weight: 500;
+
+          border-top: 1px solid var(--grey-20);
+          border-bottom: 1px solid var(--grey-20);
+        }
       }
     }
   }

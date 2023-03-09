@@ -1,20 +1,24 @@
+import { ICart } from "../../interfaces";
 import { ProductInCart } from "../ProductInCart";
 import { Container } from "./style";
 
-interface ICart {
-  cartProducts: any[];
-  handleRemoveProductCart: (product: any) => void;
-}
-
-const CartWithProducts = ({ cartProducts, handleRemoveProductCart }: ICart) => {
+const CartWithProducts = ({
+  cartProducts,
+  clearAllProducts,
+  handleClickCartProduct,
+  handleRemoveCartProducts,
+  handleListCartProducts,
+}: ICart) => {
   return (
     <Container>
       <menu>
         {cartProducts.map((product) => (
           <ProductInCart
             product={product}
-            handleClickCartProduct={handleRemoveProductCart}
             key={product.id}
+            handleClickCartProduct={handleClickCartProduct}
+            handleRemoveCartProducts={handleRemoveCartProducts}
+            handleListCartProducts={handleListCartProducts}
           />
         ))}
       </menu>
@@ -27,13 +31,16 @@ const CartWithProducts = ({ cartProducts, handleRemoveProductCart }: ICart) => {
             R${" "}
             {cartProducts
               .reduce(
-                (valorAnterior, valorAtual) => valorAnterior + valorAtual.preco,
+                (valorAnterior, valorAtual) =>
+                  valorAnterior + Number(valorAtual.preco * valorAtual.count),
                 0
               )
               .toFixed(2)
               .replace(".", ",")}
           </span>
         </div>
+
+        <button onClick={clearAllProducts}>Remover todos</button>
       </div>
     </Container>
   );

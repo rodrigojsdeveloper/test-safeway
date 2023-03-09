@@ -1,16 +1,14 @@
+import { ICategory, IProductComponent } from "../../interfaces";
 import { useEffect, useState } from "react";
 import { Container } from "./style";
-
-interface IProductComponent {
-  product: any;
-  handleClickCartProduct: any;
-}
 
 const ProductInCart = ({
   product,
   handleClickCartProduct,
+  handleListCartProducts,
+  handleRemoveCartProducts,
 }: IProductComponent) => {
-  const [categories, setCategories] = useState<any[]>();
+  const [categories, setCategories] = useState<ICategory[]>();
 
   useEffect(() => {
     fetch("http://localhost:3000/categorias")
@@ -19,7 +17,9 @@ const ProductInCart = ({
       .catch((error) => console.log(error));
   }, []);
 
-  const category = categories?.find((p) => p.id === product.categoria_id);
+  const category = categories?.find(
+    (p: ICategory) => p.id === product.categoria_id
+  );
 
   return (
     <Container>
@@ -33,7 +33,25 @@ const ProductInCart = ({
           <p>{category?.nome}</p>
         </div>
 
-        <p onClick={() => handleClickCartProduct(product)}>Remover</p>
+        <div>
+          <p onClick={() => handleClickCartProduct(product)}>Remover</p>
+
+          <div>
+            <button
+              className="botaoMais"
+              onClick={() => handleListCartProducts(product)}
+            >
+              +
+            </button>
+            <span>{product.count}</span>
+            <button
+              className="botaoMenos"
+              onClick={() => handleRemoveCartProducts(product)}
+            >
+              -
+            </button>
+          </div>
+        </div>
       </div>
     </Container>
   );

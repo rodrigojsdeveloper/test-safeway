@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
+import { IListProducts } from "../../interfaces";
 import { Product } from "../Product";
 import { Container } from "./style";
 
-interface IListProducts {
-  products: any[];
-  handleAddToCart: (product: any) => void;
-}
-
-const ListProducts = ({ products, handleAddToCart }: IListProducts) => {
+const ListProducts = ({ products, handleListCartProducts }: IListProducts) => {
   return (
     <Container>
       {products.map((product) => (
         <Product
           product={product}
-          handleAddToCart={handleAddToCart}
+          handleListCartProducts={handleListCartProducts}
           key={product.id}
         />
       ))}
