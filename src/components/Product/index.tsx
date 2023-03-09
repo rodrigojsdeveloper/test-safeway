@@ -2,9 +2,10 @@ import { Container } from "./style";
 
 interface IProductComponent {
   product: any;
+  handleAddToCart: (product: any) => void;
 }
 
-const Product = ({ product }: IProductComponent) => {
+const Product = ({ product, handleAddToCart }: IProductComponent) => {
   return (
     <Container>
       <img src={product.foto} alt={product.nome} />
@@ -16,7 +17,7 @@ const Product = ({ product }: IProductComponent) => {
 
         <p>{product.preco}</p>
 
-        <button>Comprar</button>
+        <button onClick={() => handleAddToCart(product)}>Comprar</button>
       </div>
     </Container>
   );

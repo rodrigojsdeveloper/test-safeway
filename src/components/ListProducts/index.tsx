@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { Product } from "../Product";
 import { Container } from "./style";
 
-const ListProducts = () => {
-  const [products, setProducts] = useState<any[]>([]);
+interface IListProducts {
+  products: any[];
+  handleAddToCart: (product: any) => void;
+}
 
-  useEffect(() => {
-    fetch("http://localhost:3000/posts")
-      .then((res) => res.json())
-      .then((res) => setProducts(res))
-      .catch((error) => console.error(error));
-  }, []);
-
+const ListProducts = ({ products, handleAddToCart }: IListProducts) => {
   return (
     <Container>
       {products.map((product) => (
-        <Product product={product} key={product.id} />
+        <Product
+          product={product}
+          handleAddToCart={handleAddToCart}
+          key={product.id}
+        />
       ))}
     </Container>
   );
