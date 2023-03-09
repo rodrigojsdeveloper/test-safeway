@@ -1,36 +1,41 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 300px;
-  height: 346px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 
   border-radius: 4px;
   background-color: var(--white);
   border: 2px solid var(--grey-20);
 
-  margin: 6px 20px 6px 0;
+  margin: 20px 0;
 
   & > figure {
     width: 100%;
+    max-width: 200px;
     height: 150px;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    border-radius: 5px 5px 0 0;
     background-color: var(--grey-0);
   }
 
   & > div {
     width: 100%;
+    max-width: 250px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
-    padding: 16px 19px 23px 20px;
+    padding: 20px;
 
     h3,
     span {
@@ -58,39 +63,32 @@ const Container = styled.div`
       color: var(--color-primary);
       padding: 14px 0;
     }
-
-    & > button {
-      width: 100%;
-      max-width: 106px;
-      height: 40px;
-
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 19px;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      border: none;
-      border-radius: 4px;
-
-      transition: 0.5s;
-
-      background-color: var(--color-primary);
-      border-color: var(--color-primary);
-      color: var(--white);
-
-      :hover {
-        background-color: var(--color-primary-50);
-        border-color: var(--color-primary-50);
-      }
-    }
   }
 
-  @media (max-width: 1440px) {
-    min-width: 300px;
+  & > p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    text-align: center;
+    color: var(--grey-50);
+    padding: 20px 20px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    & > figure {
+      max-width: unset;
+
+      & > img {
+        object-fit: contain;
+      }
+    }
+
+    & > p {
+      padding: 0 0 20px 20px;
+    }
   }
 `;
 

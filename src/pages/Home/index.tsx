@@ -67,6 +67,7 @@ const Home = () => {
           <ModalCheckoutCart
             setOpenModal={setOpenModal}
             clearAllProducts={handleClearCart}
+            cartProducts={cartProducts}
           />
         </ModalBackground>
       ) : null}

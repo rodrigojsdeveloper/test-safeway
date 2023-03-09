@@ -13,7 +13,7 @@ const Container = styled.div`
 
   padding: 80px;
   overflow-y: auto;
-  background: var(--shadow8);
+  background: var(--shadow);
 
   @media (max-width: 768px) {
     padding: 80px 25px;

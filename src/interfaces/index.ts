@@ -45,4 +45,9 @@ export interface IModalBackground {
 export interface IModalCheckoutCart {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
   clearAllProducts: () => void;
+  cartProducts: IProduct[];
+}
+
+export interface IStaticProduct {
+  product: IProduct;
 }
