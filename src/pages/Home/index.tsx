@@ -1,6 +1,8 @@
+import { ModalCheckoutCart } from "../../components/ModalCheckoutCart";
+import { ModalBackground } from "../../components/ModalBackground";
 import { ListProducts } from "../../components/ListProducts";
+import React, { useEffect, useState } from "react";
 import { Cart } from "../../components/Cart";
-import { useEffect, useState } from "react";
 import { IProduct } from "../../interfaces";
 import { api } from "../../services/api";
 import { Container } from "./style";
@@ -9,6 +11,8 @@ const Home = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
 
   const [cartProducts, setCartProducts] = useState<IProduct[]>([]);
+
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   useEffect(() => {
     api
@@ -57,19 +61,29 @@ const Home = () => {
   const handleClearCart = () => setCartProducts([]);
 
   return (
-    <Container>
-      <ListProducts
-        products={products}
-        handleListCartProducts={handleAddToCart}
-      />
-      <Cart
-        cartProducts={cartProducts}
-        handleClickCartProduct={handleClickCartProduct}
-        handleRemoveCartProducts={handleRemoveFromCart}
-        clearAllProducts={handleClearCart}
-        handleListCartProducts={handleAddToCart}
-      />
-    </Container>
+    <React.Fragment>
+      {openModal ? (
+        <ModalBackground>
+          <ModalCheckoutCart
+            setOpenModal={setOpenModal}
+            clearAllProducts={handleClearCart}
+          />
+        </ModalBackground>
+      ) : null}
+      <Container>
+        <ListProducts
+          products={products}
+          handleListCartProducts={handleAddToCart}
+        />
+        <Cart
+          cartProducts={cartProducts}
+          handleClickCartProduct={handleClickCartProduct}
+          handleRemoveCartProducts={handleRemoveFromCart}
+          handleListCartProducts={handleAddToCart}
+          setOpenModal={setOpenModal}
+        />
+      </Container>
+    </React.Fragment>
   );
 };
 

@@ -18,7 +18,7 @@
 
 ## :dart: Teste
 
-Objetivo do teste é cria uma loja online, e tenha carrinho de compras.
+Objetivo do teste é cria uma loja online que tenha carrinho de compras.
 
 Link do projeto: [https://teste-front-end-jr-beta.vercel.app/](https://teste-front-end-jr-beta.vercel.app/)
 

@@ -32,8 +32,17 @@ export interface IListProducts {
 
 export interface ICart {
   cartProducts: IProduct[];
-  clearAllProducts: () => void;
   handleClickCartProduct: (product: IProduct) => void;
   handleRemoveCartProducts: (product: IProduct) => void;
   handleListCartProducts: (product: IProduct) => void;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IModalBackground {
+  children: React.ReactNode;
+}
+
+export interface IModalCheckoutCart {
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  clearAllProducts: () => void;
 }

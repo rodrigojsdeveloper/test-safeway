@@ -5,10 +5,10 @@ import { ICart } from "../../interfaces";
 
 const Cart = ({
   cartProducts,
-  clearAllProducts,
   handleClickCartProduct,
   handleRemoveCartProducts,
   handleListCartProducts,
+  setOpenModal,
 }: ICart) => {
   return (
     <Container>
@@ -19,10 +19,10 @@ const Cart = ({
       {cartProducts.length > 0 ? (
         <CartWithProducts
           cartProducts={cartProducts}
-          clearAllProducts={clearAllProducts}
           handleClickCartProduct={handleClickCartProduct}
           handleRemoveCartProducts={handleRemoveCartProducts}
           handleListCartProducts={handleListCartProducts}
+          setOpenModal={setOpenModal}
         />
       ) : (
         <CartEmpty />

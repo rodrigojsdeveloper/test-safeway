@@ -1,13 +1,13 @@
-import { ICart } from "../../interfaces";
 import { ProductInCart } from "../ProductInCart";
+import { ICart } from "../../interfaces";
 import { Container } from "./style";
 
 const CartWithProducts = ({
   cartProducts,
-  clearAllProducts,
   handleClickCartProduct,
   handleRemoveCartProducts,
   handleListCartProducts,
+  setOpenModal,
 }: ICart) => {
   return (
     <Container>
@@ -40,7 +40,7 @@ const CartWithProducts = ({
           </span>
         </div>
 
-        <button onClick={clearAllProducts}>Remover todos</button>
+        <button onClick={() => setOpenModal(true)}>Comprar</button>
       </div>
     </Container>
   );
