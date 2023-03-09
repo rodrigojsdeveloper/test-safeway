@@ -20,7 +20,7 @@
 
 Objetivo do teste é cria uma loja online que tenha carrinho de compras.
 
-Link do projeto: [https://teste-front-end-jr-beta.vercel.app/](https://teste-front-end-jr-beta.vercel.app/)
+Link do projeto: [https://safeway-rust.vercel.app/](https://safeway-rust.vercel.app/)
 
 ## :rocket: Tecnologias
 
