@@ -27,8 +27,7 @@ const CartWithProducts = ({ cartProducts, handleRemoveProductCart }: ICart) => {
             R${" "}
             {cartProducts
               .reduce(
-                (valorAnterior, valorAtual) =>
-                  valorAnterior + Number(valorAtual.price * valorAtual.count),
+                (valorAnterior, valorAtual) => valorAnterior + valorAtual.preco,
                 0
               )
               .toFixed(2)

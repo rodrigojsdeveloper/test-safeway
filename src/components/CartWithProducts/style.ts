@@ -7,10 +7,6 @@ const Container = styled.div`
   border-radius: 0px 0px 5px 5px;
   background-color: var(--grey-0);
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
   & > menu {
     width: 100%;
     height: 323px;

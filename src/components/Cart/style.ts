@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  min-width: 365px;
+  width: 100%;
+  max-width: 365px;
 
   & > div:nth-child(1) {
     width: 100%;

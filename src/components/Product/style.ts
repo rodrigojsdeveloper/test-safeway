@@ -78,14 +78,13 @@ const Container = styled.div`
 
       transition: 0.5s;
 
-      background-color: var(--grey-20);
-      border-color: var(--grey-20);
-      color: var(--grey-50);
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--white);
 
       :hover {
-        background-color: var(--grey-50);
-        border-color: var(--grey-50);
-        color: var(--grey-20);
+        background-color: var(--color-primary-50);
+        border-color: var(--color-primary-50);
       }
     }
   }
