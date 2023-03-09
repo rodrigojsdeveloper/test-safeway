@@ -1,12 +1,13 @@
-import { CartEmpty } from "../CartEmpty";
 import { CartWithProducts } from "../CartWithProducts";
+import { CartEmpty } from "../CartEmpty";
 import { Container } from "./style";
 
 interface ICart {
   cartProducts: any[];
+  handleRemoveProductCart: (product: any) => void;
 }
 
-const Cart = ({ cartProducts }: ICart) => {
+const Cart = ({ cartProducts, handleRemoveProductCart }: ICart) => {
   return (
     <Container>
       <div>
@@ -14,7 +15,10 @@ const Cart = ({ cartProducts }: ICart) => {
       </div>
 
       {cartProducts.length > 0 ? (
-        <CartWithProducts cartProducts={cartProducts} />
+        <CartWithProducts
+          cartProducts={cartProducts}
+          handleRemoveProductCart={handleRemoveProductCart}
+        />
       ) : (
         <CartEmpty />
       )}

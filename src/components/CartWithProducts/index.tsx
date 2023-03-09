@@ -1,16 +1,22 @@
+import { ProductInCart } from "../ProductInCart";
 import { Container } from "./style";
 
 interface ICart {
   cartProducts: any[];
+  handleRemoveProductCart: (product: any) => void;
 }
 
-const CartWithProducts = ({ cartProducts }: ICart) => {
+const CartWithProducts = ({ cartProducts, handleRemoveProductCart }: ICart) => {
   return (
     <Container>
       <menu>
-        {/*cartProducts.map((product) => (
-          <ProductInCart product={product} key={product.id} />
-        ))*/}
+        {cartProducts.map((product) => (
+          <ProductInCart
+            product={product}
+            handleClickCartProduct={handleRemoveProductCart}
+            key={product.id}
+          />
+        ))}
       </menu>
 
       <div>

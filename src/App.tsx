@@ -17,10 +17,16 @@ const App = () => {
   const handleAddToCart = (product: any) =>
     setCartProducts([product, ...cartProducts]);
 
+  const handleRemoveProductCart = (product: any) =>
+    setCartProducts(cartProducts.filter((p) => p.id !== product.id));
+
   return (
     <>
       <ListProducts products={products} handleAddToCart={handleAddToCart} />
-      <Cart cartProducts={cartProducts} />
+      <Cart
+        cartProducts={cartProducts}
+        handleRemoveProductCart={handleRemoveProductCart}
+      />
     </>
   );
 };
