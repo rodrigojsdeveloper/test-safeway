@@ -42,7 +42,7 @@ const CartWithProducts = ({
         </div>
 
         <Button color="gray" size="medium" onClick={() => setOpenModal(true)}>
-          Comprar
+          Finalizar carrinho
         </Button>
       </div>
     </Container>

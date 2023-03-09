@@ -27,7 +27,7 @@ const ModalCheckoutCart = ({
           setOpenModal(false);
         }}
       >
-        Finalizar carrinho
+        Comprar
       </Button>
     </Container>
   );
