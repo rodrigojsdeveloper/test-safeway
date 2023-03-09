@@ -1,6 +1,7 @@
 import { ProductInCart } from "../ProductInCart";
 import { ICart } from "../../interfaces";
 import { Container } from "./style";
+import { Button } from "../Button";
 
 const CartWithProducts = ({
   cartProducts,
@@ -40,7 +41,9 @@ const CartWithProducts = ({
           </span>
         </div>
 
-        <button onClick={() => setOpenModal(true)}>Comprar</button>
+        <Button color="gray" size="medium" onClick={() => setOpenModal(true)}>
+          Comprar
+        </Button>
       </div>
     </Container>
   );

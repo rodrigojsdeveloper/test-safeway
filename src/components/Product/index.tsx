@@ -1,5 +1,6 @@
 import { IProductProps } from "../../interfaces";
 import { Container } from "./style";
+import { Button } from "../Button";
 
 const Product = ({ product, handleListCartProducts }: IProductProps) => {
   return (
@@ -15,7 +16,13 @@ const Product = ({ product, handleListCartProducts }: IProductProps) => {
 
         <span>R$ {product.preco.toFixed(2).replace(".", ",")}</span>
 
-        <button onClick={() => handleListCartProducts(product)}>Comprar</button>
+        <Button
+          color="blue"
+          size="small"
+          onClick={() => handleListCartProducts(product)}
+        >
+          Comprar
+        </Button>
       </div>
     </Container>
   );

@@ -58,35 +58,6 @@ const Container = styled.div`
       color: var(--color-primary);
       padding: 14px 0;
     }
-
-    & > button {
-      width: 100%;
-      max-width: 106px;
-      height: 40px;
-
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 19px;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      border: none;
-      border-radius: 4px;
-
-      transition: 0.5s;
-
-      background-color: var(--color-primary);
-      border-color: var(--color-primary);
-      color: var(--white);
-
-      :hover {
-        background-color: var(--color-primary-50);
-        border-color: var(--color-primary-50);
-      }
-    }
   }
 
   @media (max-width: 1440px) {

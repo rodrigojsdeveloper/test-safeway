@@ -1,7 +1,8 @@
 import { IModalCheckoutCart } from "../../interfaces";
+import { StaticProduct } from "../StaticProduct";
 import { Container } from "./style";
 import x from "../../assets/x.svg";
-import { StaticProduct } from "../StaticProduct";
+import { Button } from "../Button";
 
 const ModalCheckoutCart = ({
   setOpenModal,
@@ -21,7 +22,16 @@ const ModalCheckoutCart = ({
         ))}
       </menu>
 
-      <button onClick={clearAllProducts}>Finalizar carrinho</button>
+      <Button
+        color="blue"
+        size="large"
+        onClick={() => {
+          clearAllProducts();
+          setOpenModal(false);
+        }}
+      >
+        Finalizar carrinho
+      </Button>
     </Container>
   );
 };
