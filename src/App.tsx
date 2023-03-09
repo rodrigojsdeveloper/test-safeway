@@ -1,5 +1,7 @@
+import { ListProducts } from "./components/ListProducts";
+
 const App = () => {
-  return <div> </div>;
+  return <ListProducts />;
 };
 
 export { App };
