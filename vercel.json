@@ -2,8 +2,9 @@
   "version": 2,
   "routes": [
     {
-      "src": "/services/.*",
-      "dest": "./dbTeste.json"
+      "src": "/services/*.ts",
+      "dest": "/dbTeste.json"
     }
-  ]
+  ],
+  "public": "./"
 }
