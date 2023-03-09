@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Cart } from "../../components/Cart";
 import { IProduct } from "../../interfaces";
 import { api } from "../../services/api";
+import logo from "../../assets/logo.svg";
 import { Container } from "./style";
 
 const Home = () => {
@@ -72,17 +73,23 @@ const Home = () => {
         </ModalBackground>
       ) : null}
       <Container>
-        <ListProducts
-          products={products}
-          handleListCartProducts={handleAddToCart}
-        />
-        <Cart
-          cartProducts={cartProducts}
-          handleClickCartProduct={handleClickCartProduct}
-          handleRemoveCartProducts={handleRemoveFromCart}
-          handleListCartProducts={handleAddToCart}
-          setOpenModal={setOpenModal}
-        />
+        <figure>
+          <img src={logo} alt="logo" />
+        </figure>
+
+        <div>
+          <ListProducts
+            products={products}
+            handleListCartProducts={handleAddToCart}
+          />
+          <Cart
+            cartProducts={cartProducts}
+            handleClickCartProduct={handleClickCartProduct}
+            handleRemoveCartProducts={handleRemoveFromCart}
+            handleListCartProducts={handleAddToCart}
+            setOpenModal={setOpenModal}
+          />
+        </div>
       </Container>
     </React.Fragment>
   );
