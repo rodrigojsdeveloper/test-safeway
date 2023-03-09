@@ -1,7 +1,7 @@
 import { IModalCheckoutCart } from "../../interfaces";
 import { StaticProduct } from "../StaticProduct";
+import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
-import x from "../../assets/x.svg";
 import { Button } from "../Button";
 
 const ModalCheckoutCart = ({
@@ -11,10 +11,7 @@ const ModalCheckoutCart = ({
 }: IModalCheckoutCart) => {
   return (
     <Container>
-      <div>
-        <h2>Finalizar Carrinho</h2>
-        <img src={x} alt="x" onClick={() => setOpenModal(false)} />
-      </div>
+      <HeaderModal title="Finalizar Carrinho" setOpenModal={setOpenModal} />
 
       <menu>
         {cartProducts.map((product) => (

@@ -51,3 +51,14 @@ export interface IModalCheckoutCart {
 export interface IStaticProduct {
   product: IProduct;
 }
+
+export interface IHeaderModal {
+  title: string;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IModalSpecificProduct {
+  product: IProduct;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  handleListCartProducts: (product: IProduct) => void;
+}

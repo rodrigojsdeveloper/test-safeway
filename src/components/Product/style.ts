@@ -20,6 +20,8 @@ const Container = styled.div`
 
     border-radius: 5px 5px 0 0;
     background-color: var(--grey-0);
+
+    cursor: pointer;
   }
 
   & > div {
