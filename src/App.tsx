@@ -20,7 +20,7 @@ const App = () => {
   return (
     <>
       <ListProducts products={products} handleAddToCart={handleAddToCart} />
-      <Cart />
+      <Cart cartProducts={cartProducts} />
     </>
   );
 };

@@ -8,14 +8,16 @@ interface IProductComponent {
 const Product = ({ product, handleAddToCart }: IProductComponent) => {
   return (
     <Container>
-      <img src={product.foto} alt={product.nome} />
+      <figure>
+        <img src={product.foto} alt={product.nome} />
+      </figure>
 
       <div>
         <h3>{product.nome}</h3>
 
         <p>{product.descricao}</p>
 
-        <p>{product.preco}</p>
+        <span>R$ {product.preco.toFixed(2).replace(".", ",")}</span>
 
         <button onClick={() => handleAddToCart(product)}>Comprar</button>
       </div>
