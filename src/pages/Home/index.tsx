@@ -2,6 +2,7 @@ import { ListProducts } from "../../components/ListProducts";
 import { Cart } from "../../components/Cart";
 import { useEffect, useState } from "react";
 import { IProduct } from "../../interfaces";
+import { api } from "../../services/api";
 import { Container } from "./style";
 
 const Home = () => {
@@ -10,9 +11,9 @@ const Home = () => {
   const [cartProducts, setCartProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/posts")
-      .then((res) => res.json())
-      .then((res) => setProducts(res))
+    api
+      .get("posts")
+      .then((res) => setProducts(res.data))
       .catch((error) => console.error(error));
   }, []);
 

@@ -1,5 +1,6 @@
 import { ICategory, IProductComponent } from "../../interfaces";
 import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 import { Container } from "./style";
 
 const ProductInCart = ({
@@ -11,9 +12,9 @@ const ProductInCart = ({
   const [categories, setCategories] = useState<ICategory[]>();
 
   useEffect(() => {
-    fetch("http://localhost:3000/categorias")
-      .then((res) => res.json())
-      .then((res) => setCategories(res))
+    api
+      .get("categorias")
+      .then((res) => setCategories(res.data))
       .catch((error) => console.log(error));
   }, []);
 
