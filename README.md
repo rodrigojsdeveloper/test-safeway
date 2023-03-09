@@ -40,7 +40,7 @@ $ git clone https://github.com/Rodrigodeveloperjr/test-safeway.git
 $ yarn
 
 # Execute a fake api com JSON Server
-json-server --watch dbTeste.json
+$ yarn start
 
 # Abra outro terminal e execute o projeto
 $ yarn dev
