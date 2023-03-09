@@ -5,6 +5,5 @@
       "src": "/services/*.ts",
       "dest": "/dbTeste.json"
     }
-  ],
-  "public": "./"
+  ]
 }
