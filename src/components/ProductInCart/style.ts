@@ -122,6 +122,10 @@ const Container = styled.div`
           @media (max-width: 1440px) {
             padding-top: 0.5px;
           }
+
+          @media (max-width: 375px) {
+            padding: 0.5px 7px 2px 7px;
+          }
         }
       }
     }
