@@ -1,11 +1,12 @@
 import { ProductContext } from "../../context/ProductContext";
+import { ModalContext } from "../../context/ModalContext";
 import { ProductInCart } from "../ProductInCart";
-import { ICart } from "../../interfaces";
 import { Container } from "./style";
-import { Button } from "../Button";
 import { useContext } from "react";
+import { Button } from "../Button";
 
-const CartWithProducts = ({ setOpenModal }: ICart) => {
+const CartWithProducts = () => {
+  const { handleOpenModalCheckoutCart } = useContext(ModalContext);
   const { cartProducts } = useContext(ProductContext);
 
   return (
@@ -33,7 +34,11 @@ const CartWithProducts = ({ setOpenModal }: ICart) => {
           </span>
         </div>
 
-        <Button color="gray" size="medium" onClick={() => setOpenModal(true)}>
+        <Button
+          color="gray"
+          size="medium"
+          onClick={handleOpenModalCheckoutCart}
+        >
           Finalizar carrinho
         </Button>
       </div>

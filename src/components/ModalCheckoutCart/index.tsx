@@ -1,17 +1,21 @@
 import { ProductContext } from "../../context/ProductContext";
-import { IModalCheckoutCart } from "../../interfaces";
+import { ModalContext } from "../../context/ModalContext";
 import { StaticProduct } from "../StaticProduct";
 import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
 import { Button } from "../Button";
 import { useContext } from "react";
 
-const ModalCheckoutCart = ({ setOpenModal }: IModalCheckoutCart) => {
+const ModalCheckoutCart = () => {
+  const { handleCloseModalCheckoutCart } = useContext(ModalContext);
   const { cartProducts, handleClearCart } = useContext(ProductContext);
 
   return (
     <Container>
-      <HeaderModal title="Finalizar Carrinho" setOpenModal={setOpenModal} />
+      <HeaderModal
+        title="Finalizar Carrinho"
+        setOpenModal={handleCloseModalCheckoutCart}
+      />
 
       <menu>
         {cartProducts.map((product) => (
@@ -41,7 +45,7 @@ const ModalCheckoutCart = ({ setOpenModal }: IModalCheckoutCart) => {
           size="large"
           onClick={() => {
             handleClearCart();
-            setOpenModal(false);
+            handleCloseModalCheckoutCart();
           }}
         >
           Comprar

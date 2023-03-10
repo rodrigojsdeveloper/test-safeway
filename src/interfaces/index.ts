@@ -17,20 +17,8 @@ export interface IProductComponent {
   product: IProduct;
 }
 
-export interface ICart {
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 export interface IModalBackground {
   children: React.ReactNode;
-}
-
-export interface IModalCheckoutCart {
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export interface IStaticProduct {
-  product: IProduct;
 }
 
 export interface IHeaderModal {
@@ -40,5 +28,5 @@ export interface IHeaderModal {
 
 export interface IModalSpecificProduct {
   product: IProduct;
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenModalSpecificProduct: React.Dispatch<React.SetStateAction<boolean>>;
 }

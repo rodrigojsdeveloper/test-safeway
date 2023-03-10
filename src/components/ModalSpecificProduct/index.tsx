@@ -7,13 +7,16 @@ import { useContext } from "react";
 
 const ModalSpecificProduct = ({
   product,
-  setOpenModal,
+  setOpenModalSpecificProduct,
 }: IModalSpecificProduct) => {
   const { handleAddToCart } = useContext(ProductContext);
 
   return (
     <Container>
-      <HeaderModal title="Produto" setOpenModal={setOpenModal} />
+      <HeaderModal
+        title="Produto"
+        setOpenModal={() => setOpenModalSpecificProduct(false)}
+      />
 
       <div>
         <figure>

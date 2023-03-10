@@ -1,7 +1,7 @@
-import { IStaticProduct } from "../../interfaces";
+import { IProductComponent } from "../../interfaces";
 import { Container } from "./style";
 
-const StaticProduct = ({ product }: IStaticProduct) => {
+const StaticProduct = ({ product }: IProductComponent) => {
   return (
     <Container>
       <figure>

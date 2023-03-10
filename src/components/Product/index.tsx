@@ -1,25 +1,28 @@
 import { ModalSpecificProduct } from "../ModalSpecificProduct";
 import { ProductContext } from "../../context/ProductContext";
-import { ModalBackground } from "../ModalBackground";
 import { IProductComponent } from "../../interfaces";
+import { ModalBackground } from "../ModalBackground";
 import React, { useContext, useState } from "react";
 import { Container } from "./style";
 import { Button } from "../Button";
 
 const Product = ({ product }: IProductComponent) => {
+  const [openModalSpecificProduct, setOpenModalSpecificProduct] =
+    useState<boolean>(false);
   const { handleAddToCart } = useContext(ProductContext);
-
-  const [openModal, setOpenModal] = useState<boolean>(false);
 
   return (
     <React.Fragment>
-      {openModal ? (
+      {openModalSpecificProduct ? (
         <ModalBackground>
-          <ModalSpecificProduct product={product} setOpenModal={setOpenModal} />
+          <ModalSpecificProduct
+            product={product}
+            setOpenModalSpecificProduct={setOpenModalSpecificProduct}
+          />
         </ModalBackground>
       ) : null}
       <Container>
-        <figure onClick={() => setOpenModal(true)}>
+        <figure onClick={() => setOpenModalSpecificProduct(true)}>
           <img src={product.foto} alt={product.nome} />
         </figure>
 
