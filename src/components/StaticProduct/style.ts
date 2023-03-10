@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
+  height: 185px;
 
   display: flex;
   flex-direction: row;
@@ -17,7 +18,7 @@ const Container = styled.div`
   & > figure {
     width: 100%;
     max-width: 200px;
-    height: 150px;
+    height: 100%;
 
     display: flex;
     flex-direction: row;

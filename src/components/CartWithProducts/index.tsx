@@ -19,7 +19,7 @@ const CartWithProducts = () => {
 
       <div>
         <div>
-          <p>Total</p>
+          <p>Total:</p>
 
           <span>
             R${" "}
