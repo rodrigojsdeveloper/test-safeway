@@ -1,21 +1,14 @@
 import { ICategory, IProductComponent } from "../../interfaces";
+import { CategoryContext } from "../../context/CategoryContext";
 import { ProductContext } from "../../context/ProductContext";
-import { useContext, useEffect, useState } from "react";
-import { api } from "../../services/api";
 import { Container } from "./style";
+import { useContext } from "react";
 
 const ProductInCart = ({ product }: IProductComponent) => {
+  const { categories } = useContext(CategoryContext);
+
   const { handleClickCartProduct, handleAddToCart, handleRemoveFromCart } =
     useContext(ProductContext);
-
-  const [categories, setCategories] = useState<ICategory[]>();
-
-  useEffect(() => {
-    api
-      .get("categorias")
-      .then((res) => setCategories(res.data))
-      .catch((error) => console.log(error));
-  }, []);
 
   const category = categories?.find(
     (p: ICategory) => p.id === product.categoria_id

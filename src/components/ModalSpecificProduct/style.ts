@@ -3,7 +3,6 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   max-width: 600px;
-  height: 600px;
 
   border-radius: 4px;
   background-color: var(--white);
@@ -59,6 +58,11 @@ const Container = styled.div`
 
         color: var(--grey-50);
         padding: 30px 0 15px 0;
+
+        &:nth-child(3) {
+          padding: 20px 0;
+          font-weight: 600;
+        }
       }
 
       & > span {

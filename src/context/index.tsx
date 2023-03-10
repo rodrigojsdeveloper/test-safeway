@@ -1,3 +1,4 @@
+import { CategoryContextProvider } from "./CategoryContext";
 import { ProductContextProvider } from "./ProductContext";
 import { ModalContextProvider } from "./ModalContext";
 
@@ -8,7 +9,9 @@ type Providers = {
 const Providers = ({ children }: Providers) => {
   return (
     <ProductContextProvider>
-      <ModalContextProvider>{children}</ModalContextProvider>
+      <ModalContextProvider>
+        <CategoryContextProvider>{children}</CategoryContextProvider>
+      </ModalContextProvider>
     </ProductContextProvider>
   );
 };

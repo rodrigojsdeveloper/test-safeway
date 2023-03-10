@@ -1,5 +1,6 @@
+import { ICategory, IModalSpecificProduct } from "../../interfaces";
+import { CategoryContext } from "../../context/CategoryContext";
 import { ProductContext } from "../../context/ProductContext";
-import { IModalSpecificProduct } from "../../interfaces";
 import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
 import { Button } from "../Button";
@@ -9,7 +10,12 @@ const ModalSpecificProduct = ({
   product,
   setOpenModalSpecificProduct,
 }: IModalSpecificProduct) => {
+  const { categories } = useContext(CategoryContext);
   const { handleAddToCart } = useContext(ProductContext);
+
+  const category = categories?.find(
+    (p: ICategory) => p.id === product.categoria_id
+  );
 
   return (
     <Container>
@@ -27,6 +33,8 @@ const ModalSpecificProduct = ({
           <h3>{product.nome}</h3>
 
           <p>{product.descricao}</p>
+
+          <p>{category?.nome}</p>
 
           <span>R$ {product.preco.toFixed(2).replace(".", ",")}</span>
 

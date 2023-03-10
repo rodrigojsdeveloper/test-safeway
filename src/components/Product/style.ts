@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 300px;
-  height: 346px;
 
   border-radius: 4px;
   background-color: var(--white);
@@ -51,6 +50,10 @@ const Container = styled.div`
 
       color: var(--grey-50);
       padding-top: 14px;
+
+      &:nth-child(3) {
+        font-weight: 600;
+      }
     }
 
     & > span {
