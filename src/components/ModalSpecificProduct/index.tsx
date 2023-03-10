@@ -1,13 +1,16 @@
+import { ProductContext } from "../../context/ProductContext";
 import { IModalSpecificProduct } from "../../interfaces";
 import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
 import { Button } from "../Button";
+import { useContext } from "react";
 
 const ModalSpecificProduct = ({
   product,
   setOpenModal,
-  handleListCartProducts,
 }: IModalSpecificProduct) => {
+  const { handleAddToCart } = useContext(ProductContext);
+
   return (
     <Container>
       <HeaderModal title="Produto" setOpenModal={setOpenModal} />
@@ -27,7 +30,7 @@ const ModalSpecificProduct = ({
           <Button
             color="blue"
             size="small"
-            onClick={() => handleListCartProducts(product)}
+            onClick={() => handleAddToCart(product)}
           >
             Comprar
           </Button>

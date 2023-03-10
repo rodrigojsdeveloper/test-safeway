@@ -1,16 +1,15 @@
-import { IListProducts } from "../../interfaces";
+import { ProductContext } from "../../context/ProductContext";
 import { Product } from "../Product";
 import { Container } from "./style";
+import { useContext } from "react";
 
-const ListProducts = ({ products, handleListCartProducts }: IListProducts) => {
+const ListProducts = () => {
+  const { products } = useContext(ProductContext);
+
   return (
     <Container>
       {products.map((product) => (
-        <Product
-          product={product}
-          handleListCartProducts={handleListCartProducts}
-          key={product.id}
-        />
+        <Product product={product} key={product.id} />
       ))}
     </Container>
   );

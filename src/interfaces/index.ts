@@ -15,26 +15,9 @@ export interface ICategory {
 
 export interface IProductComponent {
   product: IProduct;
-  handleListCartProducts: (product: IProduct) => void;
-  handleClickCartProduct: (product: IProduct) => void;
-  handleRemoveCartProducts: (product: IProduct) => void;
-}
-
-export interface IProductProps {
-  product: IProduct;
-  handleListCartProducts: (product: IProduct) => void;
-}
-
-export interface IListProducts {
-  products: IProduct[];
-  handleListCartProducts: (product: IProduct) => void;
 }
 
 export interface ICart {
-  cartProducts: IProduct[];
-  handleClickCartProduct: (product: IProduct) => void;
-  handleRemoveCartProducts: (product: IProduct) => void;
-  handleListCartProducts: (product: IProduct) => void;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -44,8 +27,6 @@ export interface IModalBackground {
 
 export interface IModalCheckoutCart {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-  clearAllProducts: () => void;
-  cartProducts: IProduct[];
 }
 
 export interface IStaticProduct {
@@ -60,5 +41,4 @@ export interface IHeaderModal {
 export interface IModalSpecificProduct {
   product: IProduct;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
-  handleListCartProducts: (product: IProduct) => void;
 }

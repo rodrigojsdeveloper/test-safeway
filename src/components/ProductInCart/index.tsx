@@ -1,14 +1,13 @@
 import { ICategory, IProductComponent } from "../../interfaces";
-import { useEffect, useState } from "react";
+import { ProductContext } from "../../context/ProductContext";
+import { useContext, useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container } from "./style";
 
-const ProductInCart = ({
-  product,
-  handleClickCartProduct,
-  handleListCartProducts,
-  handleRemoveCartProducts,
-}: IProductComponent) => {
+const ProductInCart = ({ product }: IProductComponent) => {
+  const { handleClickCartProduct, handleAddToCart, handleRemoveFromCart } =
+    useContext(ProductContext);
+
   const [categories, setCategories] = useState<ICategory[]>();
 
   useEffect(() => {
@@ -40,14 +39,14 @@ const ProductInCart = ({
           <div>
             <button
               className="botaoMais"
-              onClick={() => handleListCartProducts(product)}
+              onClick={() => handleAddToCart(product)}
             >
               +
             </button>
             <span>{product.count}</span>
             <button
               className="botaoMenos"
-              onClick={() => handleRemoveCartProducts(product)}
+              onClick={() => handleRemoveFromCart(product)}
             >
               -
             </button>

@@ -1,22 +1,21 @@
 import { ModalSpecificProduct } from "../ModalSpecificProduct";
+import { ProductContext } from "../../context/ProductContext";
 import { ModalBackground } from "../ModalBackground";
-import { IProductProps } from "../../interfaces";
-import React, { useState } from "react";
+import { IProductComponent } from "../../interfaces";
+import React, { useContext, useState } from "react";
 import { Container } from "./style";
 import { Button } from "../Button";
 
-const Product = ({ product, handleListCartProducts }: IProductProps) => {
+const Product = ({ product }: IProductComponent) => {
+  const { handleAddToCart } = useContext(ProductContext);
+
   const [openModal, setOpenModal] = useState<boolean>(false);
 
   return (
     <React.Fragment>
       {openModal ? (
         <ModalBackground>
-          <ModalSpecificProduct
-            product={product}
-            handleListCartProducts={handleListCartProducts}
-            setOpenModal={setOpenModal}
-          />
+          <ModalSpecificProduct product={product} setOpenModal={setOpenModal} />
         </ModalBackground>
       ) : null}
       <Container>
@@ -34,7 +33,7 @@ const Product = ({ product, handleListCartProducts }: IProductProps) => {
           <Button
             color="blue"
             size="small"
-            onClick={() => handleListCartProducts(product)}
+            onClick={() => handleAddToCart(product)}
           >
             Comprar
           </Button>

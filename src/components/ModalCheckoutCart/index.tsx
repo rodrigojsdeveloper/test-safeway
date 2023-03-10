@@ -1,14 +1,14 @@
+import { ProductContext } from "../../context/ProductContext";
 import { IModalCheckoutCart } from "../../interfaces";
 import { StaticProduct } from "../StaticProduct";
 import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
 import { Button } from "../Button";
+import { useContext } from "react";
 
-const ModalCheckoutCart = ({
-  setOpenModal,
-  clearAllProducts,
-  cartProducts,
-}: IModalCheckoutCart) => {
+const ModalCheckoutCart = ({ setOpenModal }: IModalCheckoutCart) => {
+  const { cartProducts, handleClearCart } = useContext(ProductContext);
+
   return (
     <Container>
       <HeaderModal title="Finalizar Carrinho" setOpenModal={setOpenModal} />
@@ -40,7 +40,7 @@ const ModalCheckoutCart = ({
           color="blue"
           size="large"
           onClick={() => {
-            clearAllProducts();
+            handleClearCart();
             setOpenModal(false);
           }}
         >

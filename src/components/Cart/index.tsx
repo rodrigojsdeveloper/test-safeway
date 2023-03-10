@@ -1,15 +1,13 @@
+import { ProductContext } from "../../context/ProductContext";
 import { CartWithProducts } from "../CartWithProducts";
 import { CartEmpty } from "../CartEmpty";
 import { ICart } from "../../interfaces";
 import { Container } from "./style";
+import { useContext } from "react";
 
-const Cart = ({
-  cartProducts,
-  handleClickCartProduct,
-  handleRemoveCartProducts,
-  handleListCartProducts,
-  setOpenModal,
-}: ICart) => {
+const Cart = ({ setOpenModal }: ICart) => {
+  const { cartProducts } = useContext(ProductContext);
+
   return (
     <Container>
       <div>
@@ -17,13 +15,7 @@ const Cart = ({
       </div>
 
       {cartProducts.length > 0 ? (
-        <CartWithProducts
-          cartProducts={cartProducts}
-          handleClickCartProduct={handleClickCartProduct}
-          handleRemoveCartProducts={handleRemoveCartProducts}
-          handleListCartProducts={handleListCartProducts}
-          setOpenModal={setOpenModal}
-        />
+        <CartWithProducts setOpenModal={setOpenModal} />
       ) : (
         <CartEmpty />
       )}

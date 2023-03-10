@@ -5,19 +5,18 @@ const Container = styled.div`
   height: 100vh;
 
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+
   position: fixed;
   left: 0;
   top: 0;
   z-index: 2000;
 
-  padding: 80px;
-  overflow-y: auto;
   background: var(--shadow);
 
-  @media (max-width: 768px) {
-    padding: 80px 25px;
-  }
+  padding: 20px;
 `;
 
 export { Container };
