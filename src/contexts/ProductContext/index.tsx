@@ -1,27 +1,14 @@
-import React, { createContext, useEffect, useState } from "react";
-import { IProduct } from "../../interfaces";
+import { createContext, useEffect, useState } from "react";
 import { api } from "../../services/api";
+import {
+  IModalBackground,
+  IProduct,
+  IProductContextData,
+} from "../../interfaces";
 
-type ProductContextData = {
-  products: IProduct[];
-  setProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
-  cartProducts: IProduct[];
-  setCartProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
-  handleAddToCart: (product: IProduct) => void;
-  handleRemoveFromCart: (product: IProduct) => void;
-  handleClickCartProduct: (product: IProduct) => void;
-  handleClearCart: () => void;
-};
+export const ProductContext = createContext({} as IProductContextData);
 
-type ProductContextProvider = {
-  children: React.ReactNode;
-};
-
-export const ProductContext = createContext({} as ProductContextData);
-
-export const ProductContextProvider = ({
-  children,
-}: ProductContextProvider) => {
+export const ProductContextProvider = ({ children }: IModalBackground) => {
   const [products, setProducts] = useState<IProduct[]>([]);
 
   const [cartProducts, setCartProducts] = useState<IProduct[]>([]);

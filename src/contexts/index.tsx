@@ -1,12 +1,9 @@
 import { CategoryContextProvider } from "./CategoryContext";
 import { ProductContextProvider } from "./ProductContext";
 import { ModalContextProvider } from "./ModalContext";
+import { IModalBackground } from "../interfaces";
 
-type Providers = {
-  children: React.ReactNode;
-};
-
-const Providers = ({ children }: Providers) => {
+const Providers = ({ children }: IModalBackground) => {
   return (
     <ProductContextProvider>
       <ModalContextProvider>

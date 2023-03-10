@@ -1,7 +1,7 @@
 import { ModalCheckoutCart } from "../../components/ModalCheckoutCart";
 import { ModalBackground } from "../../components/ModalBackground";
 import { ListProducts } from "../../components/ListProducts";
-import { ModalContext } from "../../context/ModalContext";
+import { ModalContext } from "../../contexts/ModalContext";
 import { Cart } from "../../components/Cart";
 import React, { useContext } from "react";
 import logo from "../../assets/logo.svg";

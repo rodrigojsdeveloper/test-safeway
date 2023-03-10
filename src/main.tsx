@@ -1,6 +1,6 @@
 import GlobalStyled from "./styles/global";
 import ReactDOM from "react-dom/client";
-import { Providers } from "./context";
+import { Providers } from "./contexts";
 import { App } from "./App";
 import React from "react";
 

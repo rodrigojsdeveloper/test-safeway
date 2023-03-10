@@ -1,7 +1,7 @@
-import { CategoryContext } from "../../context/CategoryContext";
+import { CategoryContext } from "../../contexts/CategoryContext";
 import { ICategory, IProductComponent } from "../../interfaces";
 import { ModalSpecificProduct } from "../ModalSpecificProduct";
-import { ProductContext } from "../../context/ProductContext";
+import { ProductContext } from "../../contexts/ProductContext";
 import { ModalBackground } from "../ModalBackground";
 import React, { useContext, useState } from "react";
 import { Container } from "./style";

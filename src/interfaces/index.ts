@@ -30,3 +30,24 @@ export interface IModalSpecificProduct {
   product: IProduct;
   setOpenModalSpecificProduct: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface ICategoryContextData {
+  categories?: ICategory[];
+}
+
+export interface IProductContextData {
+  products: IProduct[];
+  setProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
+  cartProducts: IProduct[];
+  setCartProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
+  handleAddToCart: (product: IProduct) => void;
+  handleRemoveFromCart: (product: IProduct) => void;
+  handleClickCartProduct: (product: IProduct) => void;
+  handleClearCart: () => void;
+}
+
+export interface IModalContextData {
+  handleOpenModalCheckoutCart: () => void;
+  handleCloseModalCheckoutCart: () => void;
+  openModalCheckoutCart: boolean;
+}

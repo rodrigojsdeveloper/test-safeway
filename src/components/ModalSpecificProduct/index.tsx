@@ -1,6 +1,6 @@
 import { ICategory, IModalSpecificProduct } from "../../interfaces";
-import { CategoryContext } from "../../context/CategoryContext";
-import { ProductContext } from "../../context/ProductContext";
+import { CategoryContext } from "../../contexts/CategoryContext";
+import { ProductContext } from "../../contexts/ProductContext";
 import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
 import { Button } from "../Button";

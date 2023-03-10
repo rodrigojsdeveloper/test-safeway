@@ -1,18 +1,9 @@
-import React, { createContext, useState } from "react";
+import { IModalBackground, IModalContextData } from "../../interfaces";
+import { createContext, useState } from "react";
 
-type ModalContextData = {
-  handleOpenModalCheckoutCart: () => void;
-  handleCloseModalCheckoutCart: () => void;
-  openModalCheckoutCart: boolean;
-};
+export const ModalContext = createContext({} as IModalContextData);
 
-type ModalContextProvider = {
-  children: React.ReactNode;
-};
-
-export const ModalContext = createContext({} as ModalContextData);
-
-export const ModalContextProvider = ({ children }: ModalContextProvider) => {
+export const ModalContextProvider = ({ children }: IModalBackground) => {
   const [openModalCheckoutCart, setOpenModalCheckoutCart] =
     useState<boolean>(false);
 

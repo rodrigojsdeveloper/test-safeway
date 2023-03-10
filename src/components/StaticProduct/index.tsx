@@ -1,4 +1,4 @@
-import { CategoryContext } from "../../context/CategoryContext";
+import { CategoryContext } from "../../contexts/CategoryContext";
 import { ICategory, IProductComponent } from "../../interfaces";
 import { Container } from "./style";
 import { useContext } from "react";

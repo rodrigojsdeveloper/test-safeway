@@ -1,5 +1,5 @@
-import { ProductContext } from "../../context/ProductContext";
-import { ModalContext } from "../../context/ModalContext";
+import { ProductContext } from "../../contexts/ProductContext";
+import { ModalContext } from "../../contexts/ModalContext";
 import { ProductInCart } from "../ProductInCart";
 import { Container } from "./style";
 import { useContext } from "react";

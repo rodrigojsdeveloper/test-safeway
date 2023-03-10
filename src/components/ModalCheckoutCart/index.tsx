@@ -1,5 +1,5 @@
-import { ProductContext } from "../../context/ProductContext";
-import { ModalContext } from "../../context/ModalContext";
+import { ProductContext } from "../../contexts/ProductContext";
+import { ModalContext } from "../../contexts/ModalContext";
 import { StaticProduct } from "../StaticProduct";
 import { HeaderModal } from "../HeaderModal";
 import { Container } from "./style";
