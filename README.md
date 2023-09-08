@@ -1,12 +1,6 @@
 &#xa0;
 
-<h1 align="center">Teste Frontend React Developer</h1>
-
-<p align="center">
- <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Rodrigodeveloperjr/teste-front-end-jr?color=56BEB8&logo=typescript">
-
-  <img alt="GitHub top language" src="https://img.shields.io/badge/react-18.2.0-blue">
-<hr>
+<h1 align="center">Teste SafeWay</h1>
 
 <p align="center">
   <a href="#rocket-Tecnologias">Tecnologias</a> &#xa0; | &#xa0;
@@ -39,13 +33,14 @@ $ git clone https://github.com/Rodrigodeveloperjr/test-safeway.git
 # Instalar dependências
 $ yarn
 
-# Execute a fake api com JSON Server
+# Execute a fake API com JSON Server
 $ yarn start
 
 # Abra outro terminal e execute o projeto
 $ yarn dev
 
-# O servidor inicializará no <http://localhost:5173>
+# A fake API inicializará no <http://localhost:3000>
+# O projeto inicializará no <http://localhost:5173>
 ```
 
 ## :computer: Desenvolvedor
