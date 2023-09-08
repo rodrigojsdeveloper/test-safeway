@@ -39,7 +39,7 @@ const Container = styled.div`
       justify-content: flex-start;
       align-items: flex-start;
 
-      padding: 50px 19px 23px 20px;
+      padding: 50px 19px 23px 10px;
 
       h3,
       span {

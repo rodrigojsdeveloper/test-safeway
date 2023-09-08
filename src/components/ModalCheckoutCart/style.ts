@@ -3,12 +3,12 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   max-width: 600px;
-  height: 700px;
 
   border-radius: 4px;
   background-color: var(--white);
 
   padding: 20px;
+  margin-top: 120px;
 
   & > menu {
     height: 500px;

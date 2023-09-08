@@ -17,6 +17,7 @@ const Container = styled.div`
   background: var(--shadow);
 
   padding: 20px;
+  overflow-y: auto;
 `;
 
 export { Container };

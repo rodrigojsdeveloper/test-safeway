@@ -25,6 +25,10 @@ const Container = styled.div`
     justify-content: center;
 
     background-color: var(--grey-0);
+
+    @media(max-width: 768px) {
+      height: 200px;
+    }
   }
 
   & > div {
@@ -81,6 +85,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 768px) {
+    height: unset;
     flex-direction: column;
 
     & > figure {
